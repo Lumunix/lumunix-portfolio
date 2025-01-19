@@ -3,11 +3,15 @@
     import { LightSwitch } from '@skeletonlabs/skeleton';
     import { modeCurrent } from '@skeletonlabs/skeleton';
     import { Hamburger } from 'svelte-hamburgers';
+    import { fly } from 'svelte/transition';
     import routes from '$lib/NavRoutes';
-    let open;
+
+    let open = false;
 </script>
 
-<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+<AppBar
+
+class="relative z-10" gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
     <!-- Hamburger Icon -->
     <svelte:fragment slot="lead">
         <Hamburger bind:open --color=rgba(var(--theme-font-color-base)/>
@@ -20,14 +24,18 @@
 
 <!-- Dropdown Menu -->
 {#if open}
-    <div class="absolute left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-50">
+    <div
+        class="absolute left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-50"
+        transition:fly={{ y: -100, duration: 300 }}
+        style="z-index: 5;"
+    >
         <nav class="flex flex-col border-b border-gray-300 dark:border-gray-700">
             {#each routes as route}
                 <a
-                    href={route.path}
+                    href={route.href}
                     class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                    {route.name}
+                    {route.label}
                 </a>
             {/each}
         </nav>
