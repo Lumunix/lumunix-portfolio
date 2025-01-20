@@ -41,6 +41,8 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.13",
+    "@splidejs/svelte-splide": "^0.2.9",
+    "d3": "^7.9.0",
     "highlight.js": "11.11.1",
     "svelte-hamburger": "^1.0.1",
     "svelte-icons": "^2.1.0"
