@@ -1,20 +1,17 @@
 <script>
     import { AppBar } from '@skeletonlabs/skeleton';
     import { LightSwitch } from '@skeletonlabs/skeleton';
-    import { modeCurrent } from '@skeletonlabs/skeleton';
-    import { Hamburger } from 'svelte-hamburgers';
+    import Hamburger from 'svelte-hamburger';
     import { fly } from 'svelte/transition';
     import routes from '$lib/NavRoutes';
 
     let open = false;
 </script>
 
-<AppBar
-
-class="relative z-10" gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+<AppBar class="relative z-10" gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
     <!-- Hamburger Icon -->
     <svelte:fragment slot="lead">
-        <Hamburger bind:open --color=rgba(var(--theme-font-color-base)/>
+       <Hamburger {open} on:click={() => open = !open} />
     </svelte:fragment>
     Dylan Poljak
     <svelte:fragment slot="trail">
@@ -27,8 +24,7 @@ class="relative z-10" gridColumns="grid-cols-3" slotDefault="place-self-center" 
     <div
         class="absolute left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-50"
         transition:fly={{ y: -100, duration: 300 }}
-        style="z-index: 5;"
-    >
+        style="z-index: 5;">
         <nav class="flex flex-col border-b border-gray-300 dark:border-gray-700">
             {#each routes as route}
                 <a
