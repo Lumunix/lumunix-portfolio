@@ -24,16 +24,19 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import Circlepack from '$lib/components/Circlepack.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
 </script>
 
 
 
 <Nav/>
-<Circlepack/>
 <div class="flex flex-col min-h-screen">
-<slot />
+    <slot />
 </div>
 <Footer/>
 
+<style>
+
+</style>
 
 

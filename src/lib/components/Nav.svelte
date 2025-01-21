@@ -6,6 +6,10 @@
     import routes from '$lib/NavRoutes';
 
     let open = false;
+
+    function closeNav() {
+        open = false;
+    }
 </script>
 
 <AppBar class="font-bold relative z-10" gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
@@ -30,6 +34,7 @@
                 <a
                     href={route.href}
                     class="font-bold px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    on:click={closeNav}
                 >
                     {route.label}
                 </a>
@@ -43,15 +48,5 @@
 
 
 <style>
-  .icons {
-        display: flex !important;
-        justify-content: center !important;
-		align-items: center;
-		gap: 10px;
-		cursor: pointer;
-		font-size: 20px;
-		display: flex;
-		justify-content: space-between;
-		max-width: 100px;
-  }
+
 </style>

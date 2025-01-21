@@ -6,6 +6,10 @@ const routes = [
 	{
 		href: '/about',
 		label: 'About'
+	},
+    {
+		href: '/contact',
+		label: 'Contact'
 	}
 ];
 

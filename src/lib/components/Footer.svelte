@@ -12,7 +12,7 @@ let currentYear = new Date().getFullYear();
     <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 p-4 rounded-lg">
         <!-- Footer Content -->
         <div class="text-sm">
-            ©{currentYear} Lumunix. All Rights Reserved.
+            ©{currentYear} Dylan Poljak. All Rights Reserved.
         </div>
 
         <!-- Social Media Icons -->
